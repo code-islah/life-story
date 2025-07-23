@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Md AlAmin" />
+  <meta name="description"
+                                                                                                                          content="AlQuran, html, css, javascript learning platform for whom wants to learn web and software development" />
+  <meta name="keywords" content=" tutorial, html, css, javascript" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" />
+  <title>Homepage | Official Website of code.islah</title>
+  <style>
+    /*    CSS RESET   */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--white);
+    }
+    
+    body {
+      line-height: 1.5rem;
+      color: var(--white);
+      background-color: var(--sec-color);
+    }
+    
+    :root {
+      --main-color: #0b213f;
+      --sec-color: #3b586e;
+      --dark: #777;
+      --light: #999;
+      --white: #fff;
+      --black: #000;
+    }
+    
+    /* Utility Class */
+    .active {
+      background-color: var(--sec-color);
+      -webkit-filter: brightness(120%);
+      color: var(--white) !important;
+    }
+    
+    .text-title {
+      font-weight: 800;
+      color: skyblue;
+      text-decoration: underline;
+      text-decoration-color: var(--white);
+    }
+    
+    .highlight {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--sec-color);
+      line-height: 2rem;
+    }
+    
+    /* Header starts */
+    .container {
+      width: 97%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      min-height: 3.5rem;
+      padding: 1rem 1rem;
+      color: var(--dark);
+      background-color: var(--main-color);
+      background: linear-gradient(to bottom,
+          var(--main-color),
+          var(--sec-color));
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    
+    .logo {
+      width: 45%;
+      height: 350px;
+      display: block;
+      padding: 5px 0 5px;
+      box-shadow: 0 2px 50px 0 rgba(59, 88, 110, 0.5);
+      border-radius: 5px;
+    }
+    
+    .logo__img {
+      animation: logo 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes logo {
+      from {
+        transform: scale(0.9);
+        box-shadow: 0 0px 5px 0 rgba(255, 255, 255, 0.4);
+        border-radius: 5px;
+      }
+      
+      to {
+        transform: scale(0.99);
+        box-shadow: 0 0px 15px 0 rgba(235, 245, 252, 0.5);
+        border-radius: 10px;
+      }
+    }
+    
+    .logo__text {
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 300;
+      opacity: 0.8;
+      text-align: left;
+      padding: 5px;
+    }
+    
+    .navbar {
+      width: 50%;
+      color: var(--dark);
+      min-height: 350px;
+      padding: 5px 0.5rem 1rem;
+      box-shadow: 0 2px 5px 0 rgba(59, 88, 110, 0.5);
+      border-radius: 5px;
+    }
+    
+    .navbar__header {
+      position: relative;
+      padding: 1.5rem 45px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      margin: 5px 0 30px;
+      box-shadow: 0 0px 15px 0 rgba(235, 245, 252, 0.5);
+    }
+    
+    .header-top {
+      text-align: center;
+      font-weight: 300;
+      color: skyblue;
+      font-size: 0.8rem;
+    }
+    
+    .header-row1 {
+      display: block;
+      height: 0.5rem;
+      font-weight: 800;
+      transform: skew(-15deg) scale(1.1);
+      color: steelblue;
+      -webkit-text-stroke: 0.5px skyblue;
+      text-shadow:
+        1px 2px rgba(59, 88, 110, 0.9),
+        1px 3px rgba(59, 88, 110, 0.8),
+        1px 4px rgba(59, 88, 110, 0.7),
+        1px 5px rgba(59, 88, 110, 0.6),
+        2px 1px rgba(255, 255, 255, 1),
+        5px 5px 5px rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+    }
+    
+    .header-row1::before {
+      content: "";
+      position: absolute;
+      top: 0.3rem;
+      left: 1.1rem;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 3.5rem;
+      height: 1.9rem;
+      z-index: 100;
+      opacity: 0.7;
+      box-shadow: 0 2px 50px 5px rgba(255, 255, 255, 0.7),
+        .5px 2px 1px 0 var(--main-color);
+    }
+    
+    .header-row1::after {
+      content: "";
+      position: absolute;
+      top: 0.3rem;
+      right: 0.9rem;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 3.2rem;
+      height: 1.9rem;
+      z-index: 100;
+      opacity: 0.7;
+      box-shadow: 0 2px 50px 5px rgba(255, 255, 255, 0.7),
+        .5px 2px 1px 0 var(--main-color);
+      ;
+    }
+    
+    .header-row2 {
+      width: 90%;
+      padding: 0 5px 2rem;
+      display: block;
+      font-weight: 300;
+      color: skyblue;
+      background-color: ;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      line-height: 1.3rem;
+      text-align: center;
+    }
+    
+    .navbar__list {
+      box-shadow: 0 0px 15px 0 rgba(235, 245, 252, 0.5);
+      margin-top: 8rem;
+      list-style: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-bottom: 4rem;
+    }
+    
+    .navbar__list li {
+      margin: 0 0 5px;
+    }
+    
+    .navbar__list li a {
+      -webkit-filter: brightness(180%);
+      color: #fff;
+      font-weight: 300;
+      display: block;
+      padding: 10px 15px;
+      text-align: center;
+      border-radius: 5px;
+      border-bottom: 2px solid var(--sec-color);
+    }
+    
+    /* Header ends */
+    
+    /* Introduction starts */
+    .introduction {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+    }
+    
+    .introduction-header {
+      color: var(--sec-color);
+      -webkit-filter: brightness(110%);
+      font-size: 1.5rem;
+      font-weight: 400;
+      display: block;
+      padding: 0.3rem 5px;
+      line-height: 2.5rem;
+      text-align: center;
+      margin-bottom: -3rem;
+      border-bottom: 2px solid var(--main-color);
+      box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.5);
+      color: steelblue;
+      -webkit-text-stroke: 0.3px #fff;
+      text-shadow:
+        1px 2px rgba(59, 88, 110, 0.9),
+        1px 3px rgba(59, 88, 110, 0.8),
+        1px 4px rgba(59, 88, 110, 0.7),
+        1px 5px rgba(59, 88, 110, 0.6),
+        2px 1px 2px rgba(255, 255, 255, 0.3),
+        5px 5px 5px rgba(255, 255, 255, 0.4);
+    }
+    
+    .introduction__box {
+      margin: 5px 5px 0;
+    }
+    
+    .box__title {
+      color: var(--sec-color);
+      -webkit-filter: brightness(150%);
+      display: block;
+      width: 100%;
+      margin: 5px auto;
+      padding: 25px 15px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0 2px 5px 0 var(--sec-color);
+      border: 1px solid var(--sec-color);
+    }
+    
+    .box__title:hover {
+      -webkit-filter: brightness(250%);
+    }
+    
+    .box__title::after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 0px;
+      right: 10%;
+      top: 40%;
+      position: absolute;
+      border: 6px solid transparent;
+      border-top-color: var(--sec-color);
+      border-top-style: solid;
+      border-top-width: 10px;
+      transition: transform 0.5s linear;
+    }
+    
+    .box__text {
+      font-weight: 300;
+      color: var(--sec-color);
+      display: block;
+      -webkit-filter: brightness(180%);
+      height: 0;
+      overflow: hidden;
+      transition:
+        height 0.5s ease,
+        padding 0.3s linear;
+    }
+    
+    
+    
+    .box__text:target {
+      height: 150px;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    
+    .box__title:hover::after {
+      content: "";
+      transform: rotate(90deg);
+    }
+    
+    /* Introduction ends */
+    
+    
+    /*Introduction to learn starts*/
+    .learn {
+      margin: 100px auto 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .learn-box {
+      margin: 100px 0 0;
+    }
+    
+    /*Introduction to learn ends*/
+    
+    /*Frontend starts*/
+    .frontend {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .frontend>.introduction-header {
+      margin-bottom: 50px;
+    }
+    
+    .roadmap-content img {
+      width: 120px;
+      height: 120px;
+    }
+    
+    
+    .frontend-cover {
+      width: 100%;
+      height: 30px;
+      background-color: var(--sec-color);
+      box-shadow: 0 3px 1px 0 var(--main-color),
+        0 0 3px 0 rgba(255, 255, 255, 1);
+      border-radius: 3px;
+      opacity: 0.8;
+      position: relative;
+      margin: 0 0 5rem;
+      z-index: 1000;
+    }
+    
+    .frontend-cover__header {
+      color: var(--sec-color);
+      -webkit-filter: brightness(180%);
+      display: block;
+      margin: 0 0 5rem;
+      padding: .3rem;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      font-weight: 300;
+    }
+    
+    .frontend-cover::before {
+      content: "Click to Open Roadmap";
+      font-size: 1.1rem;
+      position: absolute;
+      top: 0;
+      display: block;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
+      color: var(--sec-color);
+      text-shadow: .5px .5px #fff;
+      -webkit-filter: brightness(130%);
+    }
+    
+    .frontend-cover::after {
+      content: "";
+      width: 100%;
+      height: 30px;
+      top: 0;
+      border-radius: 3px;
+      position: absolute;
+      background-color: transparent;
+    }
+    
+    .frontend-cover:hover {
+      -webkit-filter: brightness(130%);
+    }
+    
+    .frontend-cover:hover::before {
+      content: "";
+    }
+    
+    .frontend-cover:hover::after {
+      animation: frontend 5s linear;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes frontend {
+      10% {
+        width: 10%;
+        background-color: var(--sec-color);
+        opacity: 0.5;
+      }
+      
+      20% {
+        width: 30%;
+        background: linear-gradient(to right, #F16529, #E44D26);
+        box-shadow: 0 5px 0px 0 rgba(241, 101, 41, 0.5);
+        content: "HTML";
+        text-align: center;
+      }
+      
+      50% {
+        width: 60%;
+        background: linear-gradient(to right, #369CD6, #2162AF);
+        box-shadow: 0 5px 0px 0 rgba(54, 156, 214, 0.5);
+        content: "CSS";
+      }
+      
+      90% {
+        width: 100%;
+        background: linear-gradient(to right, #D6BA32, #FDDA3E);
+        box-shadow: 0 5px 0px 0 rgba(253, 218, 62, 0.5);
+        content: "Javascript";
+        color: #000;
+      }
+      
+      100% {
+        content: "HTML      »     CSS      »    Javascript";
+        background: linear-gradient(to right, #F16529, #E44D26, #369CD6, #2162AF, #D6BA32, #FDDA3E);
+        box-shadow: 0px -4px 0 0 rgba(253, 218, 62, 1),
+          0px -8px 0 0 rgba(54, 156, 214, 1),
+          0px -12px 0 0 rgba(241, 101, 41, 1);
+        width: 100%;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+        -webkit-filter: brightness(150%);
+      }
+    }
+    
+    .roadmap-label {
+      display: block;
+      height: 50px;
+      z-index: 1000;
+      width: 100%;
+      position: absolute;
+      top: -0.7rem;
+      transition: height 1s linear;
+    }
+    
+    
+    .roadmap-checkbox {
+      position: absolute;
+      top: 0;
+      display: none;
+      z-index: 100;
+      
+    }
+    
+    .roadmap-content {
+      display: none;
+      pointer-events: none;
+      position: relative;
+
+    }
+    
+    .roadmap-checkbox:checked +.roadmap-content {
+      display: block;
+      height: 500px;
+      transition: height 2s linear;
+      padding-top: 1rem;
+      pointer-events: none;
+    }
+    .roadmap-checkbox:checked ~ .back-mask {
+      display: none;
+    }
+
+    
+    .map-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      margin-top: 3rem;
+    }
+    
+    .info {
+      display: block;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 300;
+      transform: skewX(5deg);
+      padding: 10px 10px 10px 35px;
+      text-shadow: -10px 10px 3px var(--main-color),
+        -15px 10px 15px #fff;
+        position: relative;
+    }
+    
+    
+    .map_title {
+      background-color: rgba(255,255,255,0.1);
+      box-shadow: -5px 15px 10px rgba(255,255,255,0.5);
+      width: 70%;
+      height: 2px;
+      margin: 3px 0 10px;
+      transform: skewX(5deg);
+      position: absolute;
+      top: -1rem;
+      display: block;
+      padding: 1px 5px;
+      font-weight: 500;
+      text-align: center;
+      color: var(--light-color);
+      text-shadow: -2px 2px 2px var(--main-color);
+    }
+    
+    .roadmap-image {
+      transform: skewX(5deg);
+      box-shadow: -5px 0px 20px var(--sec-color) inset, -5px 15px 10px var(--main-color);
+      border-radius: 5px;
+      transition: all 2s linear;
+      animation: float-left 2s linear 0.3s;
+}
+    
+    @keyframes float-left {
+      from {
+        width: 0px;
+        transform: translateX(-999px);
+      }
+      
+      to {
+        width: 100%;
+        transform: translateX(0);
+      }
+    }
+    
+    
+    .back-mask {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: .3rem;
+      position: absolute;
+      top: 3rem;
+      opacity: 0.1;
+      -webkit-filter: grayscale(100%);
+      padding: 5px;
+      width: 100%;
+      height: 150px;
+    }
+    
+    
+    /*Frontend ends*/
+    
+        /*Footer section starts*/
+        
+        .footer {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1500px;
+          width: 100%;
+        }
+        
+        .contact-form {
+          display: block;
+          width: 100%;
+          height: 30px;
+          border: none;
+          outline: none;
+          background: linear-gradient(to bottom, #fff, var(--sec-color));
+          border-bottom: 2px solid var(--main-color);
+        }
+       
+       .contact-form[placeholder] {
+         padding: 1rem;
+         color: #000 !important;
+         text-shadow: -.1px 1px 0 var(--main-color);
+         -webkit-filter: brightness(110%);
+         text-align: center;
+         border-radius: 5px;
+       }
+        
+        .contact-submit {
+          outline: none;
+          padding: 5px 10px;
+          margin: 2px 0;
+          border: 2px solid var(--sec-color);
+          background-color: var(--sec-color);
+        }
+        
+        .contact-submit:hover {
+          -webkit-filter: brightness(130%);
+        }
+
+        .footer-header {
+          position: relative;
+          display: block;
+          padding: 1rem 1rem;
+          left: 0;
+          top: 0;
+          border-radius: 5px;
+          margin-bottom: 3rem;
+        }
+        
+        .footer-info {
+          display: block;
+          margin: 1.5rem 5px;
+          font-weight: 300;
+          padding: .5rem;
+          color: var(--dark-color);
+        }
+        
+        .footer-copy {
+          color: var(--light-color);
+          -webkit-filter: brightness(130%);
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          font-weight: 400;
+          text-align: center;
+          background-color: rgba(0,0,0,0.1);
+          border-radius: 5px;
+          margin-top: 3rem;
+        }
+
+        /*Footer section ends*/
+
+    
+  </style>
+</head>
+
+<body>
+  <!--Header > Navbar > logo starts-->
+  <header>
+    <h3 class="header-top">
+      ›› Lets organize the code of life and program ‹‹
+    </h3>
+    <div class="container">
+      <div class="logo">
+        <img src="img/logo.png" alt="" class="logo__img" />
+        <h2 class="logo__text">
+          <span class="text-title">Coding</span> : A bunch of
+          syntaxes from programming languages to interact with the
+          computer. <br /><br /><span class="text-title">Islah</span>
+          : It is an Arabic word - means reform, mend, repair and
+          more. Reformation of codes in short, clean, organized
+          manner so that anyone can comprehand.
+        </h2>
+      </div>
+      
+      <div class="navbar">
+        <div class="navbar__header">
+          <span class="header-row1">Code.Islah<br /></span>
+          <span class="header-row2">Concerned about a better and bright future through
+            a straight career path.</span>
+        </div>
+        <ul class="navbar__list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="help.html">Help Desk</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  <!--Header > Navbar > logo ends-->
+  <!--Main section starts-->
+  
+  <!--introduction starts-->
+  <main>
+    <div class="container introduction">
+      <h1 class="introduction-header">
+        Lets have a discussion on worldly life first ››
+      </h1>
+      <section class="introduction">
+        <div class="introduction__box">
+          <a href="#intro-1" class="box__title">Discussion on life</a>
+          <p id="intro-1" class="box__text">
+            Life coding is more harder than a software, life is
+            just a piece of specific time, when time finishes we
+            have no authority to live on earth anymore. Isn't a
+            universal statement? Lets move on...
+          </p>
+        </div>
+        <div class="introduction__box">
+          <a href="#intro-2" class="box__title">Questions to yourself?</a>
+          <p id="intro-2" class="box__text">
+            Running a vehicle is not so easy, how it comes to
+            lead or ride a life? How it became more easier than
+            that? Am I missing a user manual of my life? Aren't
+            I serious about my life?
+          </p>
+        </div>
+        <div class="introduction__box">
+          <a href="#intro-3" class="box__title">Are we the maker?</a>
+          <p id="intro-3" class="box__text">
+            How beautifully we are fashioned, molded, balanced?
+            A human is not capable of creating another human
+            being, He has just have the ability to produce, but
+            the result is not in our hand, what will produce?
+            male or a female? its look, figure, skin, bones and
+            more? Isn't that amazing? Have we ever think those
+            in our busy lives?
+          </p>
+        </div>
+        
+        <div class="introduction__box">
+          <a href="#intro-4" class="box__title">Are you on earth?</a>
+          <p id="intro-4" class="box__text">
+            Why dont you ask yourself, who am I? Who sent me on
+            earth? I would sent to moon instead! Why I look
+            different from others?
+          </p>
+        </div>
+        
+        <div class="introduction__box">
+          <a href="#intro-5" class="box__title">Do you also have questions?</a>
+          <p id="intro-5" class="box__text">
+            Go ahead, from today ask rational questions as much
+            as you can, increase your intellectual power.
+          </p>
+        </div>
+        
+        <div class="introduction__box">
+          <a href="#intro-6" class="box__title">Be rational</a>
+          <p id="intro-6" class="box__text">
+            You may have conflict inside your mind? Dont follow
+            any bias, life is once.
+          </p>
+        </div>
+        
+        <div class="introduction__box">
+          <a href="#intro-7" class="box__title">Conclusion</a>
+          <p id="intro-7" class="box__text">
+            Life is a long/short journey, dont let it be
+            tricked, played, overwheled by others, you have a
+            life in the hereafter. You will die. You wont back
+            as you have never seen anyone retured after death.
+          </p>
+        </div>
+      </section>
+    </div>
+    <!--introduction ends-->
+    
+    <!--introduction to learn starts-->
+    <div class="container learn">
+      <h1 class="introduction-header">
+        So You are planning to learn something for livelihood
+      </h1>
+      
+      <div class="introduction__box learn-box">
+        <a href="#intro-8" class="box__title">What to do with coding now?</a>
+        <p id="intro-8" class="box__text">
+          On daily basis, we use smartphones. All we have on
+          screen is just an application that is running, we are
+          interacting as per its direction. So the visual part of
+          a phone is created with the help of codes.
+        </p>
+      </div>
+      
+      <div class="introduction__box">
+        <a href="#intro-9" class="box__title">Is there any difference in coding?</a>
+        <p id="intro-9" class="box__text">
+          Softwares or mobile applications and website developing
+          have different languages to build up. Both have their
+          own mechanism.
+        </p>
+      </div>
+      
+      <div class="introduction__box">
+        <a href="#intro-10" class="box__title">What to learn?</a>
+        <p id="intro-10" class="box__text">
+          That is my wish, I will be rewarded by my intension in
+          the hereafter and in life I will be paid by my
+          performence.
+        </p>
+      </div>
+      
+      <div class="introduction__box">
+        <a href="#intro-11" class="box__title">Just for money?</a>
+        <p id="intro-11" class="box__text">
+          Helping each other is a good practise for all human
+          beings, money is needed but not unlimited because life
+          is limited to time.
+        </p>
+      </div>
+      
+      <div class="introduction__box">
+        <a href="#intro-12" class="box__title">Purifing the intension?</a>
+        <p id="intro-12" class="box__text">
+          We should discover our flow state to give the best as we
+          can.
+        </p>
+      </div>
+    </div>
+    <!--introduction to learn ends-->
+    
+    <!--Frontend starts-->
+    <div class="container frontend">
+      <h1 class="introduction-header">
+        Initial Roadmap of Frontend
+        <span class="highlight">Web Development</span>
+      </h1>
+      <h3 class="frontend-cover__header">
+        Roadmap helps to walk on the path, not to astray from the track, If we dont have any goal to acheive then We
+        have to road or track to follow, just move on is wrong with anything, preparation with a proper plan makes us
+        to grow.
+      </h3>
+      <div class="frontend-cover">
+        <label for="roadmap" class="roadmap-label">
+          <input type="checkbox" id="roadmap" class="roadmap-checkbox" />
+          <div class="roadmap-content">
+            <div class="map-img">
+              <img src="img/logo_html.png" alt="html-logo" class="roadmap-image" />
+              <h3 class="info">
+                <span class="map_title">
+                  HTML
+                </span>
+                Hyper Text Markup Language, not a
+                programming Language, its a black and white
+                foundation of a website. Mark down letters,
+                words, sentences to do specific tasks.
+              </h3>
+            </div>
+            
+            <div class="map-img">
+              <h3 class="info">
+                <span class="map_title">
+                  CSS
+                </span>
+                Cascading Style Sheet, functions as a markup language to decorate a HTML document, it has the ability to enhance the look to even more richer.
+              </h3>
+               <img src="img/logo_css.png" alt="css-logo" class="roadmap-image"/>
+            </div>
+            
+            <div class="map-img">
+              <img src="img/logo_javascript.png" alt="javascript-logo" class="roadmap-image"/>
+              <h3 class="info">
+                <span class="map_title">
+                  javaScript
+                </span>
+                World's most used programming language to develop websites and applications, this gives ability to interact with the web dynamically. This is also the Worlds most popular programming language.
+              </h3>
+            </div>
+            
+            <div class="map-img">
+              <h3 class="info">
+                 <span class="map_title">
+                  React
+                </span>
+                React is a javaScript library to build interfaces, single page web applications and much more.
+              </h3>
+              <img src="img/react.png" alt="react-logo" class="roadmap-image"/>
+            </div>
+            
+            <div class="map-img">
+              <img src="img/bootstrap.png" alt="bootstrap-logo" class="roadmap-image"/>
+              <h3 class="info">
+                 <span class="map_title">
+                  Bootstrap
+                </span>
+                Bootstrap is a framwork for creating responsive websites so that it perfectly fits in all the devices containing different screen sizes.
+              </h3>
+            </div>
+          </div>
+          <div class="back-mask">
+            <img src="img/logo_html.png" alt="html-logo" class="roadmap-image">
+            <img src="img/logo_css.png" alt="css-logo" class="roadmap-image">
+            <img src="img/logo_javascript.png" alt="javascript-logo" class="roadmap-image">
+            <img src="img/react.png" alt="react-logo" class="roadmap-image"/>
+            <img src="img/bootstrap.png" alt="bootstrap-logo" class="roadmap-image"/>
+          </div>
+        </label>
+      </div>
+    </div>
+    <!--Frontend ends-->
+    
+  </main>
+  <!--Main section ends-->
+  <!--Footer section starts-->
+  
+  <footer>
+    <div class="container footer">
+    <h2 class="introduction-header highlight footer-header">
+      Contact Me :
+    </h2>
+    <input type="text" class="contact-form" placeholder="Send a Email">
+    <input type="submit" class="contact-submit" value="Submit">
+    <h4 class="footer-info">
+      Do you think of visiting this website worth it?
+      If a little, then take more steps and challanges of your life to achieve the goal, If you fail you may acheive something which would be missed from your life, We must chase our true life goal.
+    </h4>
+    <h3 class="footer-copy">
+      No &copy; Copyright has been preserved for this document.
+    </h3>
+  </div> 
+  </footer>
+  
+  
+    <!--Footer section ends-->
+
+</body>
+
+</html>
